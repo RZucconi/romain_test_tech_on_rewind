@@ -2,7 +2,7 @@ import { gql, useQuery } from "@apollo/client";
 
 const ALLVIDEOS = gql`
   query GetallVideos {
-    allVideos(limit: 5) {
+    allVideos(limit: 5, tags: "Testimoniales") {
       items {
         name
         url
@@ -15,7 +15,7 @@ const ALLVIDEOS = gql`
   }
 `;
 
-export default function Home() {
+export default function Testimoniales() {
   const { loading, error, data } = useQuery(ALLVIDEOS);
 
   if (loading) return <p>Loading...</p>;
