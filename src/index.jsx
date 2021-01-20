@@ -9,9 +9,8 @@ import {
 import { setContext } from "@apollo/client/link/context";
 // import reportWebVitals from './reportWebVitals';
 
-import App from "./App";
-
 import "./index.css";
+import Router from "./Router";
 
 const httpLink = createHttpLink({
   uri: process.env.REACT_APP_ENDPOINT,
@@ -35,7 +34,7 @@ const client = new ApolloClient({
 ReactDOM.render(
   <StrictMode>
     <ApolloProvider client={client}>
-      <App />
+      <Router />
     </ApolloProvider>
   </StrictMode>,
   document.getElementById("root")
