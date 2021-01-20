@@ -5,6 +5,8 @@ import Home from "./Components/Home";
 import NavBar from "./Components/NavBar";
 import Testimoniales from "./Components/Testimoniales";
 
+import "./Styles/Layout.css";
+
 const routes = [
   { path: "/", Component: Home },
   { path: "/funzone", Component: Funzone },
@@ -16,7 +18,7 @@ export default function Layout() {
   return (
     <>
       <NavBar />
-      <main>
+      <main className="main">
         {routes.map(({ path, Component }) => (
           <Route exact path={path} location={location}>
             <Component />
