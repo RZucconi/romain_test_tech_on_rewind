@@ -1,0 +1,26 @@
+.headerNav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background-color: lightslategray;
+}
+
+.navMenu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  min-width: 20%;
+  max-width: 50%;
+}
+
+.navMenu a {
+  margin: 0 1em;
+  text-decoration: none;
+  color: black;
+}
+
+.navMenu a:hover {
+  font-weight: bold;
+  color: black;
+}
