@@ -1,16 +1,20 @@
 import { Route, useLocation } from "react-router-dom";
 import "./App.css";
-import Funzone from "./Components/Funzone";
-import Home from "./Components/Home";
+
+import ThumbnailsDisplay from "./Components/ThumbnailsDiplay";
 import NavBar from "./Components/NavBar";
-import Testimoniales from "./Components/Testimoniales";
 
 import "./Styles/Layout.css";
 
 const routes = [
-  { path: "/", Component: Home },
-  { path: "/funzone", Component: Funzone },
-  { path: "/testimoniales", Component: Testimoniales },
+  { path: "/", limit: 5, tags: "", Component: ThumbnailsDisplay },
+  { path: "/funzone", limit: 5, tags: "Funzone", Component: ThumbnailsDisplay },
+  {
+    path: "/testimoniales",
+    limit: 5,
+    tags: "Testimoniales",
+    Component: ThumbnailsDisplay,
+  },
 ];
 
 export default function Layout() {
@@ -19,9 +23,9 @@ export default function Layout() {
     <>
       <NavBar />
       <main className="main">
-        {routes.map(({ path, Component }) => (
+        {routes.map(({ path, limit, tags, Component }) => (
           <Route exact path={path} location={location}>
-            <Component />
+            <Component limit={limit} tags={tags} />
           </Route>
         ))}
       </main>
