@@ -2,7 +2,7 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
-  background-color: lightslategray;
+  background-color: rgb(37, 100, 163);
 }
 
 .navMenu {
