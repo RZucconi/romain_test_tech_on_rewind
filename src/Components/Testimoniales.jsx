@@ -1,31 +1,28 @@
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
+
+import { ALLVIDEOS } from "./Query";
 
 import "../Styles/thumbnails.css";
 
-const ALLVIDEOS = gql`
-  query GetallVideos {
-    allVideos(limit: 5, tags: "Testimoniales") {
-      items {
-        name
-        url
-        poster
-        Tags {
-          name
-        }
-      }
-    }
-  }
-`;
-
 export default function Testimoniales() {
-  const { loading, error, data } = useQuery(ALLVIDEOS);
+  const { loading, error, data } = useQuery(ALLVIDEOS, {
+    variables: {
+      limit: 5,
+      tags: "Testimoniales",
+      after: "",
+    },
+  });
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error ;(</p>;
 
-  return data.allVideos.items.map(({ name, url, poster, Tags }) => (
-    <div key={url} className="thumbnail">
-      <img src={poster} alt={name} />
+  return data.allVideos.items.map(({ id, name, poster, Tags }) => (
+    <div key={id} className="thumbnail">
+      {poster !== null ? (
+        <img src={poster} alt={name} />
+      ) : (
+        <img src="https://via.placeholder.com/150" alt={name} />
+      )}
       <h3>{name}</h3>
       <div className="tags">
         <h4>Tags :</h4>
