@@ -8,7 +8,7 @@ export default function Home() {
   const { loading, error, data, fetchMore } = useQuery(ALLVIDEOS, {
     variables: {
       limit: 5,
-      after: "",
+      after: null,
     },
   });
 
@@ -43,9 +43,8 @@ export default function Home() {
               console.log(prevResult);
               console.log(fetchMoreResult);
               fetchMoreResult.allVideos.items = [
-                ...prevResult.allVideos.cursor.after,
+                ...prevResult.allVideos.items,
                 ...fetchMoreResult.allVideos.items,
-                ...fetchMoreResult.allVideos.cursor.after,
               ];
               return fetchMoreResult;
             },
