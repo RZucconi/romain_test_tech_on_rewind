@@ -1,3 +1,10 @@
+.container {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .thumbnail {
   display: flex;
   flex-direction: column;
@@ -48,6 +55,20 @@
 .tags p {
   margin: 0;
   height: 1em;
+}
+
+.buttonDiv {
+  width: 80vw;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+button {
+  width: 40%;
+  height: 50px;
+  border-radius: 20px;
+  background-color: gray;
+  font-size: 1.5em;
 }
 
 @media screen and (max-width: 1080px) {

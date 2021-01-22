@@ -19,23 +19,28 @@ export default function ThumbnailsDisplay({ limit, tags }) {
 
   return (
     <>
-      {data.allVideos.items.map(({ id, name, poster, Tags }) => (
-        <div key={id} className="thumbnail">
-          {poster !== null ? (
-            <img src={poster} alt={name} />
-          ) : (
-            <img src="https://via.placeholder.com/150" alt={name} />
-          )}
-          <h3>{name}</h3>
-          <div className="tags">
-            <h4>Tags :</h4>
-            {Tags.length === 0
-              ? "no tags"
-              : Tags.map((tag) => <p>#{tag.name}</p>)}
+      <div className="container">
+        {data.allVideos.items.map(({ id, name, poster, Tags }) => (
+          <div key={id} className="thumbnail">
+            {poster !== null ? (
+              <img src={poster} alt={name} />
+            ) : (
+              <img src="https://via.placeholder.com/150" alt={name} />
+            )}
+            <h3>{name}</h3>
+            <div className="tags">
+              <h4>Tags :</h4>
+              {Tags.length === 0
+                ? "no tags"
+                : Tags.map((tag) => <p>#{tag.name}</p>)}
+            </div>
           </div>
-        </div>
-      ))}
-      <button onClick={() => {}}>more</button>
+        ))}
+      </div>
+      <div className="buttonDiv">
+        <button onClick={() => {}}>previous</button>
+        <button onClick={() => {}}>next</button>
+      </div>
     </>
   );
 }
