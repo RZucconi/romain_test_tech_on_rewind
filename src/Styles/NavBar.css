@@ -1,8 +1,14 @@
 .headerNav {
   display: flex;
   width: 100%;
+  height: 15vh;
   justify-content: space-between;
-  background-color: lightslategray;
+  align-items: center;
+  background-color: rgb(37, 100, 163);
+}
+
+.logo {
+  margin-left: 15%;
 }
 
 .navMenu {
@@ -17,6 +23,7 @@
 .navMenu a {
   margin: 0 1em;
   text-decoration: none;
+  font-size: 1.5em;
   color: black;
 }
 
