@@ -44,9 +44,10 @@ export default function ThumbnailsDisplay({ limit, tags, name }) {
       <h2 className="title">{name} Videos :</h2>
       <div className="container">
         {data.allVideos.items.map(({ id, name, poster, Tags }) => (
-          <div key={name} className="thumbnail">
+          <div key={name} className="card">
             {poster !== null ? (
               <img
+                className="poster"
                 src={poster}
                 alt={name}
                 onClick={() => {
@@ -55,14 +56,15 @@ export default function ThumbnailsDisplay({ limit, tags, name }) {
               />
             ) : (
               <img
+                className="poster"
                 src="https://via.placeholder.com/300"
                 alt={name}
                 onClick={() => {
-                  history.push(`/video-display/${id}`);
+                  history.push(`/video-details/${id}`);
                 }}
               />
             )}
-            <h3>{name}</h3>
+            <h3 className="videoName">{name}</h3>
             <div className="tags">
               <h4>Tags :</h4>
               {Tags.length === 0

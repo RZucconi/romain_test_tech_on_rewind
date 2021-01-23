@@ -20,13 +20,23 @@ export default function SingleVideoDisplay() {
   const { name, poster } = data.video;
 
   return (
-    <div className="thumbnails">
-      <img src={poster} alt={name} />
+    <div className="card">
+      {poster !== null ? (
+        <img className="poster" src={poster} alt={name} />
+      ) : (
+        <img
+          className="poster"
+          src="https://via.placeholder.com/300"
+          alt={name}
+        />
+      )}
       <h3>{name}</h3>
-      <h4>Tags :</h4>
-      {data.video.Tags.length === 0
-        ? "no Tags"
-        : data.video.Tags.map((tag) => <p>#{tag.name}</p>)}
+      <div className="tags">
+        <h4>Tags :</h4>
+        {data.video.Tags.length === 0
+          ? "no Tags"
+          : data.video.Tags.map((tag) => <p>#{tag.name}</p>)}
+      </div>
     </div>
   );
 }
