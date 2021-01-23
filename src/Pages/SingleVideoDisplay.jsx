@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
-import { VIDEO } from "./Query";
+import { VIDEO } from "../Components/Query";
 
 import "../Styles/Thumbnails.css";
 
@@ -22,10 +22,10 @@ export default function SingleVideoDisplay() {
   return (
     <div className="singleVideoCard">
       {poster !== null ? (
-        <img className="poster" src={poster} alt={name} />
+        <img className="singleVideoPoster" src={poster} alt={name} />
       ) : (
         <img
-          className="poster"
+          className="singleVideoPoster"
           src="https://via.placeholder.com/300"
           alt={name}
         />
