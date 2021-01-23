@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
 
 import Logo from "../Images/logo_test_tech.PNG";
-import { links } from "../Components/Routes";
 
 import "../Styles/NavBar.css";
+
+const links = [
+  { path: "/funzone", name: "Funzone" },
+  { path: "/testimoniales", name: "Testimoniales" },
+];
 
 export default function NavBar() {
   return (
@@ -13,9 +17,7 @@ export default function NavBar() {
       </Link>
       <nav className="navMenu">
         {links.map((link) => (
-          <Link key={link.path} to={link.path}>
-            {link.name}
-          </Link>
+          <Link to={link.path}>{link.name}</Link>
         ))}
       </nav>
     </header>
