@@ -22,10 +22,10 @@ export default function SingleVideoDisplay() {
   return (
     <div className="singleVideoCard">
       {poster !== null ? (
-        <img className="poster" src={poster} alt={name} />
+        <img className="singleVideoPoster" src={poster} alt={name} />
       ) : (
         <img
-          className="poster"
+          className="singleVideoPoster"
           src="https://via.placeholder.com/300"
           alt={name}
         />
