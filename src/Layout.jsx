@@ -11,8 +11,6 @@ const routes = [
     path: "/",
     limit: 5,
     tags: "",
-    before: "",
-    after: "",
     Component: ThumbnailsDisplay,
     name: "All",
   },
@@ -20,8 +18,6 @@ const routes = [
     path: "/funzone",
     limit: 5,
     tags: "Funzone",
-    before: "",
-    after: "",
     Component: ThumbnailsDisplay,
     name: "Funzone",
   },
@@ -29,8 +25,6 @@ const routes = [
     path: "/testimoniales",
     limit: 5,
     tags: "Testimoniales",
-    before: "",
-    after: "",
     Component: ThumbnailsDisplay,
     name: "ThumbnailsDisplay",
   },
@@ -42,20 +36,11 @@ export default function Layout() {
     <>
       <NavBar />
       <main className="main">
-        {routes.map(
-          ({ path, id, limit, tags, Component, before, after, name }) => (
-            <Route exact path={path} location={location}>
-              <Component
-                id={id}
-                limit={limit}
-                tags={tags}
-                before={before}
-                after={after}
-                name={name}
-              />
-            </Route>
-          )
-        )}
+        {routes.map(({ path, id, limit, tags, Component, name }) => (
+          <Route exact path={path} location={location}>
+            <Component id={id} limit={limit} tags={tags} name={name} />
+          </Route>
+        ))}
       </main>
     </>
   );

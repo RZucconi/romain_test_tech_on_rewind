@@ -5,14 +5,7 @@ import { ALLVIDEOS } from "./Query";
 
 import "../Styles/thumbnails.css";
 
-export default function ThumbnailsDisplay({
-  id,
-  limit,
-  tags,
-  before,
-  after,
-  name,
-}) {
+export default function ThumbnailsDisplay({ id, limit, tags, name }) {
   const [next, setNext] = useState("");
   const [previous, setPrevious] = useState("");
 
