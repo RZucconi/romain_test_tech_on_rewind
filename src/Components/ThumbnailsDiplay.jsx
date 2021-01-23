@@ -1,15 +1,13 @@
 import { useState } from "react";
 import { useQuery } from "@apollo/client";
 
-import { ALLVIDEOS } from "../Components/Query";
+import { ALLVIDEOS } from "./Query";
 
-import "../Styles/Thumbnails.css";
-import { useHistory } from "react-router-dom";
+import "../Styles/thumbnails.css";
 
-export default function ThumbnailsDisplay({ limit, tags, name }) {
+export default function ThumbnailsDisplay({ id, limit, tags, name }) {
   const [next, setNext] = useState("");
   const [previous, setPrevious] = useState("");
-  const history = useHistory();
 
   function handleClickNext() {
     if (data.allVideos.cursor.after !== null) {
@@ -43,33 +41,19 @@ export default function ThumbnailsDisplay({ limit, tags, name }) {
     <>
       <h2 className="title">{name} Videos :</h2>
       <div className="container">
-        {data.allVideos.items.map(({ id, name, url, poster, Tags }) => (
-          <div key={url} className="card">
+        {data.allVideos.items.map(({ id, name, poster, Tags }) => (
+          <div key={id} className="thumbnail">
             {poster !== null ? (
-              <img
-                className="poster"
-                src={poster}
-                alt={name}
-                onClick={() => {
-                  history.push(`/video-details/${id}`);
-                }}
-              />
+              <img src={poster} alt={name} />
             ) : (
-              <img
-                className="poster"
-                src="https://via.placeholder.com/300"
-                alt={name}
-                onClick={() => {
-                  history.push(`/video-details/${id}`);
-                }}
-              />
+              <img src="https://via.placeholder.com/100" alt={name} />
             )}
-            <h3 className="videoName">{name}</h3>
+            <h3>{name}</h3>
             <div className="tags">
               <h4>Tags :</h4>
               {Tags.length === 0
-                ? "no Tags"
-                : Tags.map((tag) => <p key={tag.name}>#{tag.name}</p>)}
+                ? "no tags"
+                : Tags.map((tag) => <p>#{tag.name}</p>)}
             </div>
           </div>
         ))}
