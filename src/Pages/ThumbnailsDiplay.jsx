@@ -43,8 +43,8 @@ export default function ThumbnailsDisplay({ limit, tags, name }) {
     <>
       <h2 className="title">{name} Videos :</h2>
       <div className="container">
-        {data.allVideos.items.map(({ id, name, poster, Tags }) => (
-          <div key={name} className="card">
+        {data.allVideos.items.map(({ id, name, url, poster, Tags }) => (
+          <div key={url} className="card">
             {poster !== null ? (
               <img
                 className="poster"
@@ -69,7 +69,7 @@ export default function ThumbnailsDisplay({ limit, tags, name }) {
               <h4>Tags :</h4>
               {Tags.length === 0
                 ? "no Tags"
-                : Tags.map((tag) => <p>#{tag.name}</p>)}
+                : Tags.map((tag) => <p key={tag.name}>#{tag.name}</p>)}
             </div>
           </div>
         ))}

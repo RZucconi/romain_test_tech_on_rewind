@@ -26,7 +26,7 @@ export default function SingleVideoDisplay() {
       ) : (
         <img
           className="singleVideoPoster"
-          src="https://via.placeholder.com/300"
+          src="https://via.placeholder.com/300x150"
           alt={name}
         />
       )}
@@ -35,7 +35,7 @@ export default function SingleVideoDisplay() {
         <h4>Tags :</h4>
         {data.video.Tags.length === 0
           ? "no Tags"
-          : data.video.Tags.map((tag) => <p>#{tag.name}</p>)}
+          : data.video.Tags.map((tag) => <p key={tag.name}>#{tag.name}</p>)}
       </div>
     </div>
   );

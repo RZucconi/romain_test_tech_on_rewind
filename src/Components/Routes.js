@@ -1,6 +1,11 @@
 import ThumbnailsDisplay from "../Pages/ThumbnailsDiplay";
 import SingleVideoDisplay from "../Pages/SingleVideoDisplay";
 
+export const links = [
+  { path: "/funzone", name: "Funzone" },
+  { path: "/testimoniales", name: "Testimoniales" },
+];
+
 export const routes = [
   {
     path: "/",
@@ -21,10 +26,11 @@ export const routes = [
     limit: 5,
     tags: "Testimoniales",
     Component: ThumbnailsDisplay,
-    name: "ThumbnailsDisplay",
+    name: "Testimoniales",
   },
   {
     path: "/video-details/:id",
     Component: SingleVideoDisplay,
+    name: "single",
   },
 ];
