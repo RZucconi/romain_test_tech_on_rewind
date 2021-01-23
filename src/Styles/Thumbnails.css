@@ -12,6 +12,9 @@
 }
 
 /* THUMBNAILS & SINGLE VIDEO COMMON CSS*/
+.title {
+  color: #fff;
+}
 
 .container {
   display: flex;
