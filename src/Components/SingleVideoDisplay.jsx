@@ -20,7 +20,7 @@ export default function SingleVideoDisplay() {
   const { name, poster } = data.video;
 
   return (
-    <div className="card">
+    <div className="singleVideoCard">
       {poster !== null ? (
         <img className="poster" src={poster} alt={name} />
       ) : (
