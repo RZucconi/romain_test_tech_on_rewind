@@ -7,13 +7,32 @@ import NavBar from "./Components/NavBar";
 import "./Styles/Layout.css";
 
 const routes = [
-  { path: "/", limit: 5, tags: "", Component: ThumbnailsDisplay },
-  { path: "/funzone", limit: 5, tags: "Funzone", Component: ThumbnailsDisplay },
+  {
+    path: "/",
+    limit: 5,
+    tags: "",
+    before: "",
+    after: "",
+    Component: ThumbnailsDisplay,
+    name: "All",
+  },
+  {
+    path: "/funzone",
+    limit: 5,
+    tags: "Funzone",
+    before: "",
+    after: "",
+    Component: ThumbnailsDisplay,
+    name: "Funzone",
+  },
   {
     path: "/testimoniales",
     limit: 5,
     tags: "Testimoniales",
+    before: "",
+    after: "",
     Component: ThumbnailsDisplay,
+    name: "ThumbnailsDisplay",
   },
 ];
 
@@ -23,11 +42,20 @@ export default function Layout() {
     <>
       <NavBar />
       <main className="main">
-        {routes.map(({ path, limit, tags, Component }) => (
-          <Route exact path={path} location={location}>
-            <Component limit={limit} tags={tags} />
-          </Route>
-        ))}
+        {routes.map(
+          ({ path, id, limit, tags, Component, before, after, name }) => (
+            <Route exact path={path} location={location}>
+              <Component
+                id={id}
+                limit={limit}
+                tags={tags}
+                before={before}
+                after={after}
+                name={name}
+              />
+            </Route>
+          )
+        )}
       </main>
     </>
   );
