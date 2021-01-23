@@ -4,7 +4,7 @@
   justify-content: space-around;
 }
 
-.thumbnail {
+.card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,12 +28,12 @@
     10px 0px 13px -7px rgb(37, 100, 163), 5px 5px 8px 5px#000;
 }
 
-.thumbnail h3 {
+.videoName {
   margin: 0;
   word-break: break-all;
 }
 
-.thumbnail img {
+.poster {
   width: 100%;
   border-radius: 20px;
 }

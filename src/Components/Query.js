@@ -24,3 +24,17 @@ export const ALLVIDEOS = gql`
     }
   }
 `;
+
+export const VIDEO = gql`
+  query Getvideo($id: ID!) {
+    video(id: $id) {
+      name
+      poster
+      Tags {
+        name
+        tagType
+        placeholders
+      }
+    }
+  }
+`;
