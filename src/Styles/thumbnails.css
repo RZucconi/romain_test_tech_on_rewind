@@ -1,15 +1,9 @@
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
 .thumbnail {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 40%;
-  max-height: 30%;
+  width: 30%;
+  height: 30%;
   padding: 1em;
   margin: 1em;
   background-color: gray;
@@ -54,18 +48,6 @@
 .tags p {
   margin: 0;
   height: 1em;
-}
-
-button {
-  height: 50px;
-  width: 150px;
-  border-radius: 15px;
-  background-color: gray;
-  margin: 10px 0 10px 10px;
-}
-
-button:hover {
-  background-color: rgb(37, 100, 163);
 }
 
 @media screen and (max-width: 1080px) {
