@@ -13,7 +13,7 @@ export default function NavBar() {
   return (
     <header className="headerNav">
       <Link to="/">
-        <img src={Logo} alt="webapp logo" width="100px" />
+        <img className="logo" src={Logo} alt="webapp logo" width="100px" />
       </Link>
       <nav className="navMenu">
         {links.map((link) => (
