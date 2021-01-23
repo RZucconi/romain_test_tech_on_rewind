@@ -1,8 +1,9 @@
 import { Route, useLocation } from "react-router-dom";
 import "./App.css";
 
-import ThumbnailsDisplay from "./Components/ThumbnailsDiplay";
 import NavBar from "./Components/NavBar";
+import ThumbnailsDisplay from "./Components/ThumbnailsDiplay";
+import SingleVideoDisplay from "./Components/SingleVideoDisplay";
 
 import "./Styles/Layout.css";
 
@@ -27,6 +28,10 @@ const routes = [
     tags: "Testimoniales",
     Component: ThumbnailsDisplay,
     name: "ThumbnailsDisplay",
+  },
+  {
+    path: "/video-details/:id",
+    Component: SingleVideoDisplay,
   },
 ];
 
