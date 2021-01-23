@@ -1,3 +1,5 @@
+/* SINGLE VIDEO CSS */
+
 .singleVideoCard {
   display: flex;
   flex-direction: column;
@@ -8,6 +10,8 @@
   background-color: gray;
   border-radius: 20px;
 }
+
+/* THUMBNAILS & SINGLE VIDEO COMMON CSS*/
 
 .container {
   display: flex;
