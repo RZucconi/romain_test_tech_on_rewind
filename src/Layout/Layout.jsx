@@ -12,7 +12,7 @@ export default function Layout() {
       <NavBar />
       <main className="main">
         {routes.map(({ path, id, limit, tags, Component, name }) => (
-          <Route exact path={path} location={location}>
+          <Route key={name} exact path={path} location={location}>
             <Component id={id} limit={limit} tags={tags} name={name} />
           </Route>
         ))}
