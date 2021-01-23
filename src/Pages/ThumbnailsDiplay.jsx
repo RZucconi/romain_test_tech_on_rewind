@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useQuery } from "@apollo/client";
 
-import { ALLVIDEOS } from "./Query";
+import { ALLVIDEOS } from "../Components/Query";
 
 import "../Styles/Thumbnails.css";
 import { useHistory } from "react-router-dom";

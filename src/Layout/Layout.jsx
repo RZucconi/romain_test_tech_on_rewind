@@ -1,11 +1,10 @@
 import { Route, useLocation } from "react-router-dom";
-import "./App.css";
 
-import NavBar from "./Components/NavBar";
-import ThumbnailsDisplay from "./Components/ThumbnailsDiplay";
-import SingleVideoDisplay from "./Components/SingleVideoDisplay";
+import NavBar from "../Components/NavBar";
+import ThumbnailsDisplay from "../Pages/ThumbnailsDiplay";
+import SingleVideoDisplay from "../Pages/SingleVideoDisplay";
 
-import "./Styles/Layout.css";
+import "../Styles/Layout.css";
 
 const routes = [
   {

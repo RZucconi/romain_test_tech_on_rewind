@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
-import { VIDEO } from "./Query";
+import { VIDEO } from "../Components/Query";
 
 import "../Styles/Thumbnails.css";
 
