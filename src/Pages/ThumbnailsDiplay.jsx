@@ -57,7 +57,7 @@ export default function ThumbnailsDisplay({ limit, tags, name }) {
             ) : (
               <img
                 className="poster"
-                src="https://via.placeholder.com/300"
+                src="https://via.placeholder.com/613x345"
                 alt={name}
                 onClick={() => {
                   history.push(`/video-details/${id}`);
