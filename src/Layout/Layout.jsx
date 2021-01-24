@@ -9,7 +9,9 @@ export default function Layout() {
   const location = useLocation();
   return (
     <>
-      <NavBar />
+      <header className="header">
+        <NavBar />
+      </header>
       <main className="main">
         {routes.map(({ path, id, limit, tags, Component, name }) => (
           <Route key={name} exact path={path} location={location}>
