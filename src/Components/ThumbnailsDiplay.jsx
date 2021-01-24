@@ -46,7 +46,14 @@ export default function ThumbnailsDisplay({ id, limit, tags, name }) {
             {poster !== null ? (
               <img src={poster} alt={name} />
             ) : (
-              <img src="https://via.placeholder.com/100" alt={name} />
+              <img
+                className="poster"
+                src="https://via.placeholder.com/613x345"
+                alt={name}
+                onClick={() => {
+                  history.push(`/video-details/${id}`);
+                }}
+              />
             )}
             <h3>{name}</h3>
             <div className="tags">

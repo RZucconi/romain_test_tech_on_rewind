@@ -11,7 +11,7 @@ const links = [
 
 export default function NavBar() {
   return (
-    <header className="headerNav">
+    <div className="headerNav">
       <Link to="/">
         <img className="logo" src={Logo} alt="webapp logo" width="100px" />
       </Link>
@@ -20,6 +20,6 @@ export default function NavBar() {
           <Link to={link.path}>{link.name}</Link>
         ))}
       </nav>
-    </header>
+    </div>
   );
 }
