@@ -106,7 +106,7 @@ button:hover {
     min-height: 35vh;
     padding: 1em;
     margin: 1em;
-    background-color: gray;
+    background-color: #000;
     border-radius: 20px;
   }
 

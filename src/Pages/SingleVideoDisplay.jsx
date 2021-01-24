@@ -31,7 +31,7 @@ export default function SingleVideoDisplay() {
           alt={name}
         />
       )}
-      <h3>{name}</h3>
+      <h3 className="videoName">{name}</h3>
       <div className="tags">
         <h4>Tags :</h4>
         {data.video.Tags.length === 0
