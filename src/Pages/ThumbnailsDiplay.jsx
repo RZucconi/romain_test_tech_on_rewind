@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { useQuery } from "@apollo/client";
 
-import { ALLVIDEOS } from "./Query";
+import { ALLVIDEOS } from "../Components/Query";
 
-import "../Styles/thumbnails.css";
+import "../Styles/Thumbnails.css";
+import { useHistory } from "react-router-dom";
 
-export default function ThumbnailsDisplay({ id, limit, tags, name }) {
+export default function ThumbnailsDisplay({ limit, tags, name }) {
   const [next, setNext] = useState("");
   const [previous, setPrevious] = useState("");
+  const history = useHistory();
 
   function handleClickNext() {
     if (data.allVideos.cursor.after !== null) {
@@ -41,10 +43,17 @@ export default function ThumbnailsDisplay({ id, limit, tags, name }) {
     <>
       <h2 className="title">{name} Videos :</h2>
       <div className="container">
-        {data.allVideos.items.map(({ id, name, poster, Tags }) => (
-          <div key={id} className="thumbnail">
+        {data.allVideos.items.map(({ id, name, url, poster, Tags }) => (
+          <div key={url} className="card">
             {poster !== null ? (
-              <img src={poster} alt={name} />
+              <img
+                className="poster"
+                src={poster}
+                alt={name}
+                onClick={() => {
+                  history.push(`/video-details/${id}`);
+                }}
+              />
             ) : (
               <img
                 className="poster"
@@ -55,12 +64,12 @@ export default function ThumbnailsDisplay({ id, limit, tags, name }) {
                 }}
               />
             )}
-            <h3>{name}</h3>
+            <h3 className="videoName">{name}</h3>
             <div className="tags">
               <h4>Tags :</h4>
               {Tags.length === 0
-                ? "no tags"
-                : Tags.map((tag) => <p>#{tag.name}</p>)}
+                ? "no Tags"
+                : Tags.map((tag) => <p key={tag.name}>#{tag.name}</p>)}
             </div>
           </div>
         ))}
