@@ -17,7 +17,9 @@ export default function NavBar() {
       </Link>
       <nav className="navMenu">
         {links.map((link) => (
-          <Link to={link.path}>{link.name}</Link>
+          <Link key={link.path} to={link.path}>
+            {link.name}
+          </Link>
         ))}
       </nav>
     </div>
