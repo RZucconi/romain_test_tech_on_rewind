@@ -84,7 +84,7 @@ export default function ThumbnailsDisplay({ limit, tags, name }) {
             PREVIOUS
           </button>
         ) : (
-          <div></div>
+          <div />
         )}
         {data.allVideos.cursor.after !== null ? (
           <button
@@ -95,7 +95,7 @@ export default function ThumbnailsDisplay({ limit, tags, name }) {
             NEXT
           </button>
         ) : (
-          <div></div>
+          <div />
         )}
       </div>
     </>
