@@ -32,8 +32,6 @@ export const VIDEO = gql`
       poster
       Tags {
         name
-        tagType
-        placeholders
       }
     }
   }
